@@ -4,6 +4,6 @@ export default function createIteratorObject(report) {
     for (const depart of report.allEmployees[department]) {
       employeesInDepartment.push(depart);
     }
-  }
+  };
   return employeesInDepartment;
 }
