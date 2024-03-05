@@ -3,9 +3,9 @@ export default function getFullResponseFromApi(success) {
     if (success) {
       resolve({
         status: 200,
-	body: 'Success'
+        body: 'Success',
       });
     }
-    reject('The fake API is not working currently');
+    reject(Error('The fake API is not working currently'));
   });
 }

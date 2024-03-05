@@ -1,4 +1,6 @@
-
-export default async function getResponseFromAPI() {  
-  return;
+export default function getResponseFromAPI() {
+  return new Promise((resolve, reject) => {
+    resolve();
+    reject();
+  });
 }

@@ -3,7 +3,7 @@ export default function signUpUser(firstName, lastName) {
     if (firstName && lastName) {
       resolve({
         firstName,
-        lastName
+        lastName,
       });
     }
     reject();
