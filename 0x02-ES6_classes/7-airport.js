@@ -8,16 +8,16 @@ class Airport {
     return this._name;
   }
 
-  set name(value) {
-    this._name = value;
+  set name(name) {
+    this._name = name;
   }
 
   get code() {
     return this._code;
   }
 
-  set code(value) {
-    this._code = value;
+  set code(code) {
+    this._code = code;
   }
 
   toString() {
