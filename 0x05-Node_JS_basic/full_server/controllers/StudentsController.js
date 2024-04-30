@@ -5,10 +5,10 @@ class StudentsController {
     const filePath = process.argv.at(-1).split('/')[1];
     readDatabase(filePath)
       .then((data) => {
-	const { CS, SWE } = data;
-        let result = `This is the list of our students\n`;
-	result += `Number of students in CS: ${CS.length}. List: ${CS.join(', ')}\n`;
-	result += `Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`;
+        const { CS, SWE } = data;
+        let result = 'This is the list of our students\n';
+        result += `Number of students in CS: ${CS.length}. List: ${CS.join(', ')}\n`;
+        result += `Number of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`;
         response.status(200).send(result);
       })
       .catch((error) => response.status(500).send(error.message));
