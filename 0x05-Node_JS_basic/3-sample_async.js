@@ -26,7 +26,6 @@ function countStudents(path) {
 
       const { CS, SWE } = counts;
       const response = `Number of students: ${objects.length}\nNumber of students in CS: ${CS.length}. List: ${CS.join(', ')}\nNumber of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`;
-      console.log(response);
       return resolve(response);
     });
   });

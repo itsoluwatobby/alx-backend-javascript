@@ -1,16 +1,25 @@
-const app = require('http');
-const countStudents = require('./3-read_file_async');
+const http = require('http');
+const countStudents = require('./3-sample_async');
 
+const hostname = '127.0.0.1';
 const PORT = 1245;
 
-const server = app.createServer(async (req, res) => {
+const app = http.createServer((req, res) => {
   if (req.url === '/') res.end('Hello Holberton School!');
+
   else if (req.url === '/students') {
-    const countOfStudents = await countStudents(process.argv[2]);
-    res.end(`This is the list of our students\n${countOfStudents}`);
+    res.write('This is the list of our students\n');
+    countStudents(process.argv[2])
+      .then((data) => {
+        res.write(data);
+        res.end();
+      })
+      .catch((error) => {
+        res.end(error.message);
+      });
   }
 });
 
-server.listen(PORT);
+app.listen(PORT, hostname);
 
 module.exports = app;
