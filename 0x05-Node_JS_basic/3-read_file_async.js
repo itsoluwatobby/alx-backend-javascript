@@ -21,16 +21,16 @@ async function countStudents(path) {
     objects.push(obj);
   });
   const counts = {
-    CS: { names: [] },
-    SWE: { names: [] },
+    CS: [],
+    SWE: [],
   };
   objects.forEach((obj) => {
-    if (obj.field === 'CS') counts.CS.names.push(obj.firstname);
-    else counts.SWE.names.push(obj.firstname);
+    if (obj.field === 'CS') counts.CS.push(obj.firstname);
+    else counts.SWE.push(obj.firstname);
   });
 
   const { CS, SWE } = counts;
-  const response = `Number of students: ${objects.length}\nNumber of students in CS: ${CS.names.length}. List: ${CS.names.join(', ')}\nNumber of students in SWE: ${SWE.names.length}. List: ${SWE.names.join(', ')}`;
+  const response = `Number of students: ${objects.length}\nNumber of students in CS: ${CS.length}. List: ${CS.join(', ')}\nNumber of students in SWE: ${SWE.length}. List: ${SWE.join(', ')}`;
   console.log(response);
   return response;
 }
