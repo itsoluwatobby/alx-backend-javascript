@@ -1,7 +1,7 @@
-import sendPaymentRequestToApi from './4-payment.js';
 import sinon from 'sinon';
-import Utils from './utils.js';
 import { expect } from 'chai';
+import sendPaymentRequestToApi from './4-payment.js';
+import Utils from './utils.js';
 
 describe('sendPaymentRequestToApi', () => {
   let consoleLogSpy;

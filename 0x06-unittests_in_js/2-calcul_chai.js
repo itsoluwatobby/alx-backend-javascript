@@ -1,5 +1,5 @@
 function calculateNumber(type, a, b) {
-  let result
+  let result;
   if (type === 'SUM') result = Math.round(a) + Math.round(b);
   else if (type === 'SUBTRACT') result = Math.round(a) - Math.round(b);
   else if (type === 'DIVIDE') {
@@ -8,4 +8,4 @@ function calculateNumber(type, a, b) {
   return result;
 }
 
-export default calculateNumber;
+module.exports = calculateNumber;
