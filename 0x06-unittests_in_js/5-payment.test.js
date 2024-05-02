@@ -13,7 +13,7 @@ describe('sendPaymentRequestToApi', () => {
     consoleLogSpy.restore();
   });
 
-  it('should call Utils.calculateNumber with correct arguments and log 120', () => {
+  it('should call Utils.calculateNumber and log 120', () => {
     const calculateNumberStub = sinon.stub(Utils, 'calculateNumber').returns(120);
 
     sendPaymentRequestToApi(100, 20);
@@ -24,7 +24,7 @@ describe('sendPaymentRequestToApi', () => {
     calculateNumberStub.restore();
   });
 
-  it('should call Utils.calculateNumber with correct arguments and log 20', () => {
+  it('should call Utils.calculateNumber and log 20', () => {
     const calculateNumberStub = sinon.stub(Utils, 'calculateNumber').returns(20);
 
     sendPaymentRequestToApi(10, 10);
