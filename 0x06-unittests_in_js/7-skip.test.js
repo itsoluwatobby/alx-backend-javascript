@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+const { expect } = require('chai');
 
 describe('testing numbers', () => {
   it('1 is equal to 1', () => {
