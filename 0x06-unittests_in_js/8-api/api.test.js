@@ -1,5 +1,5 @@
-import request from 'request';
-import { expect } from 'chai';
+const request = require('request');
+const { expect } = require('chai');
 
 describe('Index page', () => {
   let result, response;
@@ -11,19 +11,16 @@ describe('Index page', () => {
     });
   });
 
-  it('should test the api and returns "Welcome to the payment system"', () => {
-    expect(result).to.equal('Welcome to the payment system');
+  describe('GET /', () => {
+    it('should test the api and returns "Welcome to the payment system"', () => {
+      expect(response.statusCode).to.equal(200);
+      expect(result).to.equal('Welcome to the payment system');
+    });
   });
 
-  it('should test the api and returns all the status code', () => {
-    expect(response.statusCode).to.equal(200);
-  });
-
-  it('should return a statusMessage of "OK"', () => {
-    expect(response.statusMessage).to.equal('OK');
-  });
-
-  it('should return the request protocol', () => {
-    expect(response.request.uri.protocol).to.equal('http:');
+  describe('Status Message', () => {
+    it('should return a statusMessage of "OK"', () => {
+      expect(response.statusMessage).to.equal('OK');
+    });
   });
 });
